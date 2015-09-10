@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DirectoryViewController">
+            <connections>
+                <outlet property="actionBtn" destination="HUj-5t-Z4i" id="Skb-dV-1SR"/>
+                <outlet property="deleteBtn" destination="LET-Ep-XNO" id="aia-cK-gXI"/>
+                <outlet property="fileSearchBar" destination="2cV-uJ-zgh" id="SWM-z7-MKR"/>
+                <outlet property="fileTableView" destination="f1Z-UH-A7C" id="m40-eH-jFs"/>
+                <outlet property="renameBtn" destination="Oa8-KC-G16" id="TGm-tZ-SBs"/>
+                <outlet property="view" destination="nRx-gN-zoR" id="KX2-1G-XXL"/>
+                <outlet property="zipBtn" destination="Gmf-HQ-CHV" id="8wZ-S5-yM1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="nRx-gN-zoR">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="53" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="f1Z-UH-A7C">
+                    <rect key="frame" x="0.0" y="44" width="600" height="512"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="u1D-Tf-afa"/>
+                        <outlet property="delegate" destination="-1" id="9Em-mj-7pz"/>
+                    </connections>
+                </tableView>
+                <searchBar contentMode="redraw" placeholder="Search Files" translatesAutoresizingMaskIntoConstraints="NO" id="2cV-uJ-zgh">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="lIQ-x0-czv"/>
+                    </connections>
+                </searchBar>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVV-B3-em0">
+                    <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="trash" id="LET-Ep-XNO">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteAction:" destination="-1" id="VSL-yC-9cm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Pss-gn-xUQ"/>
+                        <barButtonItem image="rename_btn" style="plain" id="Oa8-KC-G16" userLabel="Zip">
+                            <connections>
+                                <action selector="renameAction:" destination="-1" id="dvl-Tf-vXw"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="o35-1Z-TzW"/>
+                        <barButtonItem image="zip_btn" style="plain" id="Gmf-HQ-CHV" userLabel="Zip">
+                            <connections>
+                                <action selector="zipAction:" destination="-1" id="1ft-RS-Jux"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="qcF-Ua-wuc"/>
+                        <barButtonItem style="plain" systemItem="action" id="HUj-5t-Z4i">
+                            <connections>
+                                <action selector="fileShareAction:" destination="-1" id="Kaf-dq-0df"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <constraints>
+                <constraint firstItem="f1Z-UH-A7C" firstAttribute="bottom" secondItem="cVV-B3-em0" secondAttribute="top" id="D3D-1E-lZy"/>
+                <constraint firstItem="2cV-uJ-zgh" firstAttribute="leading" secondItem="nRx-gN-zoR" secondAttribute="leading" id="HWa-Gi-83I"/>
+                <constraint firstItem="2cV-uJ-zgh" firstAttribute="top" secondItem="nRx-gN-zoR" secondAttribute="top" id="Sg9-SS-XCL"/>
+                <constraint firstItem="f1Z-UH-A7C" firstAttribute="leading" secondItem="2cV-uJ-zgh" secondAttribute="leading" id="VHT-9y-0Wy"/>
+                <constraint firstItem="f1Z-UH-A7C" firstAttribute="top" secondItem="2cV-uJ-zgh" secondAttribute="bottom" id="YIt-OY-1NI"/>
+                <constraint firstAttribute="trailing" secondItem="f1Z-UH-A7C" secondAttribute="trailing" id="aeP-ce-0dr"/>
+                <constraint firstItem="f1Z-UH-A7C" firstAttribute="centerY" secondItem="nRx-gN-zoR" secondAttribute="centerY" id="e81-qk-gtW"/>
+                <constraint firstItem="f1Z-UH-A7C" firstAttribute="leading" secondItem="cVV-B3-em0" secondAttribute="leading" id="eur-FT-VRl"/>
+                <constraint firstItem="f1Z-UH-A7C" firstAttribute="trailing" secondItem="2cV-uJ-zgh" secondAttribute="trailing" id="pwa-yF-rt8"/>
+                <constraint firstItem="f1Z-UH-A7C" firstAttribute="trailing" secondItem="cVV-B3-em0" secondAttribute="trailing" id="rMX-zF-fo2"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <point key="canvasLocation" x="-292" y="184"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="rename_btn" width="27" height="27"/>
+        <image name="zip_btn" width="27" height="27"/>
+    </resources>
+</document>
